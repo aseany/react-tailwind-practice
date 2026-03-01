@@ -1,7 +1,7 @@
 
 
-import logo from '../assets/header/logo.png'; 
-import english from '../assets/header/english.png'; 
+import logo from '../assets/img/header/logo.png'; 
+import english from '../assets/img/header/english.png'; 
 
 
 export default function Header() {
