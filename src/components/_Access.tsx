@@ -4,7 +4,19 @@
 import { useState } from 'react';
 
 export default function Access() {
-  const [selected, setSelected] = useState<'osaka' | 'tokyo'>('osaka');
+  
+  型
+  // const [selected, setSelected] = useState;←これでも動くけど、型がないから、selectedに何でも入れられる。例えば、'osaka'や'tokyo'以外の文字列も入れられる。
+  const [selected, setSelected] = useState('osaka');// ←これだと、selectedには文字列しか入れられないけど、'osaka'や'tokyo'以外の文字列も入れられる。
+  // const [selected, setSelected] = useState<'osaka' | 'tokyo'>('osaka'); ←これだと、selectedには'osaka'か'tokyo'しか入れられない。例えば、'osaka'や'tokyo'以外の文字列は入れられない。
+// ↑1. カッコ ( ) と 山カッコ < > の違い
+// この一行には、プログラムに対する 2つの命令 が入っています。
+// <'osaka' | 'tokyo'> （ジェネリクス）
+// 命令： 「このコップには、『osaka』か『tokyo』という名前の付いた水しか入れちゃダメだよ！」という ルールの設定 です。
+// ('osaka') （引数）
+// 命令： 「コップを用意した瞬間に、とりあえず 『osaka』を最初に入れておいてね」という 最初のアクション です。
+
+
 
   const handleClick = (office: 'osaka' | 'tokyo') => {
     setSelected(office);
